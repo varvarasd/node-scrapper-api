@@ -2,9 +2,11 @@ const express = require("express");
 const router = express.Router();
 const scraper = require("./scraper");
 
+const jobBoard = process.env.TRUSTED_REQ;
+
 router.get("/jobs", async (req, res, next) => {
-  if(req.hostname === 'localhost'){
-    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  if(req.hostname === jobBoard){
+    res.header("Access-Control-Allow-Origin", "http://" + jobBoard); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
     const role = req.query.role;
     const city = req.query.city;

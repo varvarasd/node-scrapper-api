@@ -13,7 +13,7 @@ router.get("/jobs", async (req, res, next) => {
     const result = await scraper(role, city);
     res.json(result);
   } else {
-    res.send('Service can only be accessed from locahost!')
+    res.send('You don\'t have permission to access this resource!')
   }
 });
 

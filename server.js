@@ -15,5 +15,5 @@ app.use('*', limiter);
 
 app.use('/', router);
 
-const port = proces.env.PORT || 2000;
+const port = process.env.PORT || 2000;
 app.listen(port, () => console.log('APP LISTENING ON PORT: ' + port))
